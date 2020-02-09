@@ -9,6 +9,9 @@ import {
 
 //! whenever something dispatched to here, the states would be copied with new value  (states are immutable)
 export default (state, action) => {
+    const testCommit = true
+    console.log(testCommit)
+    // const user = { id: 100, name: 'Howard Moon'}
     // const userWithPass = { ...user, id: 100, password: 'Password!' }
     //* user --> { id: 100, name: 'Howard Moon' }
     //* userWithPass --> { id: 100, name: 'Howard Moon', password: 'Password!' }
