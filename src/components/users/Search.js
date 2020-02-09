@@ -1,34 +1,33 @@
-import React, { useState, useContext } from 'react'
-import GithubContext from '../../context/github/githubContext'
-import AlertContext from '../../context/alert/alertContext'
+import React, { useState, useContext } from 'react';
+import GithubContext from '../../context/github/githubContext';
+import AlertContext from '../../context/alert/alertContext';
 
 const Search = () => {
+    const githubContext = useContext(GithubContext);
+    const alertContext = useContext(AlertContext);
+    const { setAlert } = alertContext;
 
-    const githubContext = useContext(GithubContext)
-    const alertContext = useContext(AlertContext)
-    const { setAlert } = alertContext
+    const [title, setTitle] = useState('');
 
-    const [title, setTitle] = useState('')
-    
-    const onChange = (e) => {
-        setTitle(e.target.value)
+    const onChange = e => {
+        setTitle(e.target.value);
         // this.setState({
         //     [e.target.name]: e.target.value)}
-    }
+    };
 
     const onSubmit = e => {
-        e.preventDefault()
+        e.preventDefault();
         if (title === '') {
-            setAlert('nothing is filled', 'light')
+            setAlert('nothing is filled', 'light');
         } else {
-            githubContext.searchUsers(title)
-            setTitle('')
+            githubContext.searchUsers(title);
+            setTitle('');
         }
-    }
+    };
 
     return (
         <div>
-            <form onSubmit={onSubmit} className='form'>
+            <form onSubmit={onSubmit} className="form">
                 <input
                     type="text"
                     name="title"
@@ -39,20 +38,23 @@ const Search = () => {
                 <input
                     type="submit"
                     value="search"
-                    className='btn btn-dark btn-block'
+                    className="btn btn-dark btn-block"
                 />
             </form>
-            {githubContext.users.length > 0 &&
-                <button className="btn btn-light btn-block"
+            {githubContext.users.length > 0 && (
+                <button
+                    className="btn btn-light btn-block"
                     onClick={githubContext.clearUsers}
-                >Clear</button>}
+                >
+                    Clear
+                </button>
+            )}
         </div>
-    )
-
-}
+    );
+};
 // Search.propTypes = {
-    // clearUsers: PropTypes.func.isRequired,
-    // isClear: PropTypes.bool.isRequired,
+// clearUsers: PropTypes.func.isRequired,
+// isClear: PropTypes.bool.isRequired,
 //     showAlert: PropTypes.func.isRequired,
 // }
-export default Search
+export default Search;

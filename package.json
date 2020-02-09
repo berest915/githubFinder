@@ -1,6 +1,6 @@
 {
   "name": "github-finder",
-  "homepage": "https://rest-media.github.io/githubFinder",
+  "homepage": "https://githubfinder-from-tmedia.netlify.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

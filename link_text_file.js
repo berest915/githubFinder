@@ -1,3 +1,16 @@
+//! npm i @client
+//? npm i react-router-dom axios
+//? npm i -D nodemon 
+
+//! netlify deploy via cli
+//? npm i -g netlify-cli
+//* create file "netlify.toml" with
+// [build]
+//     publish='build'
+//* .then > netlify init > _ans-some-questiions
+//* .then > _goto-netlify > _build&deploy > _save-clientID-&-clientSecret- 2sets of key-value pairs 
+//* _goback-vs > npm run build > netlify deploy --prod
+
 // ** Code & Resources
 //!The final code for this project can be found in this Github repo:
 //? https://github.com/bradtraversy/github-finder
@@ -20,7 +33,7 @@
 
 
 //! todo-cont
-//? css ref - checkif(tmedia_github_repos_intro)
+//? css ref - checkif(tmedia_github_repos_intro) #
 //? breakpoint instead of console.log()
 
 //! Github
@@ -39,17 +52,11 @@
 //? If you are interviewing at an internet company, 
 //? it means there will be cloud resources and services that you will need to work with on a daily basis.
 
-//! const TRACK_REVISE
-//* watch a short video before end-moment
-//* project_hist_noting > component_construct-sequence_  || ppt for tree diagram, file with color1, state with color2 >>>> context, howtoPass[data,var,fn,obj]
-
 //! bypass blocking from { reason: 'running scripts are disabled on the system' }  # as terminal executing 'netlify init'
 // Get-ExecutionPolicy -List
 // Set-ExecutionPolicy Unrestricted
 // Set-ExecutionPolicy Unrestricted -Force
 
 //! Github Finder
-//! project1 use github api instead of creating one with express
+//! project-1 use github api instead of creating one with express
 // https://githubfinder-from-tmedia.netlify.com/
-
-

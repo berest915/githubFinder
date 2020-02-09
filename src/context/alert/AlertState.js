@@ -1,7 +1,6 @@
 import React, { useReducer } from 'react'
 import AlertContext from './alertContext'
 import AlertReducer from './alertReducer'
-
 import {
     SET_ALERT,
     REMOVE_ALERT
@@ -9,7 +8,7 @@ import {
 
 const AlertState = (props) => {
     const initialState = null
-    //! init Reducer
+    //! init where-to-dispatch to x_Reducer whenever dispatch() is called  # while initialState passed as first argument ?
     const [state, dispatch] = useReducer(AlertReducer, initialState)
 
     // set alert
@@ -18,6 +17,7 @@ const AlertState = (props) => {
             type: SET_ALERT,
             payload: { msg, color }
         })
+       
         setTimeout(() => dispatch({ type: REMOVE_ALERT }), 1500)
     }
 

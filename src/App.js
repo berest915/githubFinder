@@ -2,7 +2,6 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import Navbar from './components/layout/Navbar'
-
 import User from './components/users/User'
 import Alert from './components/layout/Alert'
 import About from './components/pages/About'
@@ -11,7 +10,6 @@ import NotFound from './components/pages/NotFound'
 
 import GithubState from './context/github/GIthubState'
 import AlertState from './context/alert/AlertState'
-
 import './App.css';
 
 const App = () => {
@@ -19,19 +17,16 @@ const App = () => {
   return (
     <GithubState>
       <AlertState>
-        <Router>
-          <div className="App">
-            <Navbar />
-            <div className="container">
-              <Alert />
-              {/* //? Router > Switch || Route || Fragment */}
-              <Switch>
-                <Route exact path='/' component={Home} />
-                <Route exact path='/about' component={About} />
-                <Route exact path='/user/:login' component={User} />
-                <Route component={NotFound} />
-              </Switch>
-            </div>
+        <Router>    {/*//! any component using { Link } must under <Router> */}
+          <Navbar />
+          <div className="container">   {/*//! center-wrapped */}
+            <Alert />   {/*//! trig-display */}
+            <Switch>    {/*//! Switch > chidren must be <Route> tag */}
+              <Route exact path='/' component={Home} />
+              <Route exact path='/about' component={About} />
+              <Route exact path='/user/:login' component={User} />
+              <Route component={NotFound} />
+            </Switch>
           </div>
         </Router>
       </AlertState>
@@ -86,6 +81,7 @@ export default App;
 //   //   alert: null
 //   // }
 //   //! replace with functional
+//   //! const [var-read-state, fn-write-theState] = useState({ set-initial-state-here }) #return array[0,1]
 //   // const [users, setUsers] = useState([])
 //   // const [user, setUser] = useState({})
 //   // const [repos, setRepos] = useState([])
