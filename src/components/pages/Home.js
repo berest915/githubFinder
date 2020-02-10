@@ -7,6 +7,7 @@ export default () => {
         <Fragment>
             <Search />
             <Users />
+            
         </Fragment>
     )
 }

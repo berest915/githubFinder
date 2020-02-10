@@ -11,4 +11,7 @@ export const GET_REPOS = 'GET_REPOS'
 export const SET_ALERT = 'SET_ALERT'
 export const REMOVE_ALERT = 'REMOVE_ALERT'
 
+//! fb-login
+export const GET_RESPONSE = 'GET_RESPONSE'
+
 

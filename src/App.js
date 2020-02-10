@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
+
 //! Components
 import Navbar from './components/layout/Navbar'
 import User from './components/users/User'
@@ -8,10 +9,12 @@ import Alert from './components/layout/Alert'
 import About from './components/pages/About'
 import Home from './components/pages/Home'
 import NotFound from './components/pages/NotFound'
+import FbLoginPage from './components/facebook/Facebook'
 //! Contexts
 import GithubState from './context/github/GIthubState'
 import AlertState from './context/alert/AlertState'
 import NavState from './context/_nav/NavState'
+import FbState from './components/facebook/FbState'
 import './App.css'
 
 const App = () => {
@@ -19,23 +22,34 @@ const App = () => {
         <GithubState>
             <AlertState>
                 <NavState>
-                    <Router>
-                        <Navbar />
-                        <div className="container">
-                            <Alert /> {/*//! trig-display */}
-                            <Switch>
-                                {/*//! Switch > chidren must be <Route> tag */}
-                                <Route exact path="/" component={Home} />
-                                <Route exact path="/about" component={About} />
-                                <Route
-                                    exact
-                                    path="/user/:login"
-                                    component={User}
-                                />
-                                <Route component={NotFound} />
-                            </Switch>
-                        </div>
-                    </Router>
+                    <FbState>
+                        <Router>
+                            <Navbar />
+                            <div className="container">
+                                <Alert /> {/*//! trig-display */}
+                                <Switch>
+                                    {/*//! Switch > chidren must be <Route> tag */}
+                                    <Route exact path="/" component={Home} />
+                                    <Route
+                                        exact
+                                        path="/about"
+                                        component={About}
+                                    />
+                                    <Route
+                                        exact
+                                        path="/user/:login"
+                                        component={User}
+                                    />
+                                    <Route
+                                        exact
+                                        path="/fb-login"
+                                        component={FbLoginPage}
+                                    />
+                                    <Route component={NotFound} />
+                                </Switch>
+                            </div>
+                        </Router>
+                    </FbState>
                 </NavState>
             </AlertState>
         </GithubState>
