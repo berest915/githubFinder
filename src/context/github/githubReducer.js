@@ -5,18 +5,10 @@ import {
     CLEAR_USERS,
     GET_USER,
     GET_REPOS
-} from '../types'
+} from '../types';
 
 //! whenever something dispatched to here, the states would be copied with new value  (states are immutable)
 export default (state, action) => {
-    const testCommit = true
-    console.log(testCommit)
-    // const user = { id: 100, name: 'Howard Moon'}
-    // const userWithPass = { ...user, id: 100, password: 'Password!' }
-    //* user --> { id: 100, name: 'Howard Moon' }
-    //* userWithPass --> { id: 100, name: 'Howard Moon', password: 'Password!' }
-    // const userRemovePass = {userWithPass, ...rest}
-
     switch (action.type) {
         case SEARCH_USERS:
             return {

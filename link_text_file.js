@@ -11,7 +11,12 @@
 //* .then > _goto-netlify > _build&deploy > _save-clientID-&-clientSecret- 2sets of key-value pairs 
 //* _goback-vs > npm run build > netlify deploy --prod
 
-// ** Code & Resources
+//? useEffect with sectionized-consolelog && checkif condition below:
+//? no dep, empty dep, xdep
+//? x_comp trigger somethg changed which under c_comp's useEffect deps', c_useEffect would clog
+
+
+// // Code & Resources
 //!The final code for this project can be found in this Github repo:
 //? https://github.com/bradtraversy/github-finder
 
@@ -60,3 +65,5 @@
 //! Github Finder
 //! project-1 use github api instead of creating one with express
 // https://githubfinder-from-tmedia.netlify.com/
+
+// useEffect(fn(), [])

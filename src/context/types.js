@@ -1,3 +1,6 @@
+//! _nav > NavState
+export const SET_NAV_TITLE = 'SET_NAV_TITLE'
+
 //! GithubState
 export const SEARCH_USERS = 'SEARCH_USERS'
 export const GET_USER = 'GET_USER'
