@@ -35,10 +35,10 @@ const GithubState = (props) => {
     // search users
     const searchUsers = async (title) => {
         setLoading()
-        // const setLoading = dispatch({ type: SET_LOADING })
 
-        // ** this GET request returns match results but not only limited to the username,
+        // ** GET request returns match results but not only limited to the username,
         // ** it dep on the website, might refer to https://developer.github.com/v3/ for more details
+
         const res = await axios.get(`https://api.github.com/search/users?q=${title}&
         client_id=${githubClientID}&
         client_secret=${githubClientSecret}`)

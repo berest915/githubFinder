@@ -7,8 +7,9 @@ const Spinner = () =>
     </Fragment>
     
 const spinnerStyle = {
-    width: '200px',
+    width: '100px',
     margin: 'auto', 
-    display: 'block'
+    display: 'block',
+    borderRadius: '50%'
 }
 export default Spinner
