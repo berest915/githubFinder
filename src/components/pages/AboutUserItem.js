@@ -4,8 +4,14 @@ import Spinner from '../layout/Spinner'
 import GithubContext from '../../context/github/githubContext'
 
 const AboutUserItem = (props) => {
-  const { user } = props
+  const { user, clone_users } = props
+  var sel
 
+  const hey = (a, b, user) => {
+    if (a === b) {
+      return  <AboutUserItemInOne key={b} user={user} />
+    }
+  }
   return (
     <div className="card" style={gridStyle}>
       <div className="all-center">
@@ -24,7 +30,11 @@ const AboutUserItem = (props) => {
           {user.login}
         </a>
       </div>
-      {/* <AboutUserItemInOne key={user.id} user={user} /> */}
+
+      {clone_users.map((clone_user) => (
+        sel = hey(clone_user.id, user.id, user)
+        ))}
+        
     </div>
   )
 }

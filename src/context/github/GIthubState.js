@@ -11,7 +11,9 @@ import {
   GET_USER,
   GET_REPOS,
   FETCH_USERS,
-  GET_SINCE_USER
+  GET_SINCE_USER,
+  CLONE_USERS,
+  RESET_LOOP
 } from '../types'
 
 let githubClientID
@@ -31,7 +33,8 @@ const GithubState = (props) => {
     user: {},
     repos: [],
     loading: false,
-    loop: 0,
+    loop: false,
+    clone_users: []
   }
   //! init Reducer
   const [state, dispatch] = useReducer(GithubReducer, initialState)
@@ -99,28 +102,48 @@ const GithubState = (props) => {
     client_secret=${githubClientSecret}`)
     // const users = await res.json()
     console.log('fetched')
-    console.log(res.data)
-
-
+    // fetch users
     dispatch({
       type: FETCH_USERS,
       payload: res.data
     })
+    // clone users
+    dispatch({
+      type: CLONE_USERS,
+      payload: res.data
+    })
+    dispatch({
+      type: GET_USER,
+      payload: res.data
+    })
+   
   }
    // TEST
    const getSinceUser = async (username) => {
-    setLoading()
+    // setLoading()
 
-    const res = await axios.get(`https://api.github.com/users/${username}?
-        client_id=${githubClientID}&
-        client_secret=${githubClientSecret}`)
-
+    // const res = await axios.get(`https://api.github.com/users/${username}?
+    //     client_id=${githubClientID}&
+    //     client_secret=${githubClientSecret}`)
+    // dispatch({
+    //   type: GET_SINCE_USER,
+    //   payload: res.data
+    // })
+    
+  }
+  const cloneUsers = (users) => {
+    // console.log('dispatch')
+    // console.log(users)
+    // dispatch({
+    //   type: CLONE_USERS,
+    //   payload: users
+    // })
+  }
+  const resetLoop = () => {
     dispatch({
-      type: GET_SINCE_USER,
-      payload: res.data
+      type: RESET_LOOP
     })
   }
- 
   
 
   return (
@@ -131,6 +154,8 @@ const GithubState = (props) => {
         user: state.user,
         repos: state.repos,
         loading: state.loading,
+        clone_users: state.clone_users,
+        loop: state.loop,
      
         //! fn-to-alter-states
         searchUsers,
@@ -138,7 +163,9 @@ const GithubState = (props) => {
         clearUsers,
         getUserRepos,
         fetchUsers,
-        getSinceUser
+        getSinceUser,
+        cloneUsers,
+        resetLoop
         
       }}
     >

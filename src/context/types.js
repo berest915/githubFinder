@@ -18,3 +18,5 @@ export const GET_RESPONSE = 'GET_RESPONSE'
 //! test:: use fetch
 export const FETCH_USERS = 'FETCH_USERS'
 export const GET_SINCE_USER = 'GET_SINCE_USER'
+export const CLONE_USERS= 'CLONE_USERS'
+export const RESET_LOOP = 'RESET_LOOP'

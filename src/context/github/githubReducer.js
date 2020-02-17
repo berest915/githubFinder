@@ -6,25 +6,39 @@ import {
   GET_USER,
   GET_REPOS,
   FETCH_USERS,
-  GET_SINCE_USER
+  GET_SINCE_USER,
+  CLONE_USERS,
+  RESET_LOOP
 } from '../types'
 
 //! whenever something dispatched to here, the states would be copied with new value  (states are immutable)
 export default (state, action) => {
   switch (action.type) {
-    case GET_SINCE_USER:
-      return{
+    case CLONE_USERS:
+      return {
         ...state,
-        user: action.payload,
-        loading: false,
-        
+        clone_users: action.payload,
+        // clone_users: [...action.payload],
+        loop: true
       }
     case FETCH_USERS:
       return {
-        ...state, 
+        ...state,
         users: action.payload,
-        loading: false,
+        loading: false
       }
+    case RESET_LOOP:
+      return {
+        ...state,
+        loop: false
+      }
+    case GET_SINCE_USER:
+      return {
+        ...state,
+        user: action.payload,
+        loading: false
+      }
+
     case SEARCH_USERS:
       return {
         ...state,

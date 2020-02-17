@@ -2,19 +2,21 @@ import React, { Fragment, useEffect, useContext } from 'react'
 import AboutUserItem from './AboutUserItem'
 import GithubContext from '../../context/github/githubContext'
 import Spinner from '../layout/Spinner'
+import AboutUserItemInOne from './AboutUserItemInOne'
 
 const About = () => {
-  const { users, fetchUsers, loading } = useContext(GithubContext)
+  const { users, loop, resetLoop, clone_users, fetchUsers, loading, cloneUsers } = useContext(GithubContext)
   
  
   useEffect(() => {
-    fetchUsers()
     console.log('useEffect called')
+    fetchUsers()
+   
     // eslint-disable-next-line
-  }, [])
+  }, []) 
  
   if (loading) return <Spinner />
-
+  
   return (
     //! specify a var_to_change to trigger useEffect (act as dep)
     <Fragment>
@@ -23,12 +25,15 @@ const About = () => {
       <p>version 1.0.0</p>
       <br />
       <h2>A sample to test the response from github-api </h2>
-     
+
+      
       {users.map((user) => (
         <AboutUserItem key={user.id} user={user} 
-          // achieve={achieve}
+          clone_users={clone_users}
         />
       ))}
+
+    
  
     </Fragment>
   )
