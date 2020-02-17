@@ -2,7 +2,7 @@ import React, { useReducer } from 'react'
 //! Context
 import FbContext from './fbContext'
 import FbReducer from './fbReducer'
-import {GET_RESPONSE} from '../../context/types'
+import { GET_RESPONSE } from '../../context/types'
 
 const FbState = (props) => {
     const initialState = {
@@ -13,7 +13,7 @@ const FbState = (props) => {
         picture: ''
     }
     const [state, dispatch] = useReducer(FbReducer, initialState)
-    
+
     const getResponse = (resp) => {
         dispatch({
             type: GET_RESPONSE,

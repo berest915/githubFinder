@@ -5,7 +5,15 @@ import FacebookLogin from 'react-facebook-login'
 
 const Facebook = () => {
     let fbContent
-    const { isLoggedIn, userID, name, email, picture, getResponse } = useContext(FbContext)
+    const {
+        isLoggedIn,
+        // eslint-disable-next-line
+        userID,
+        name,
+        email,
+        picture,
+        getResponse
+    } = useContext(FbContext)
 
     // const componentClicked = () => {
     //     console.log('component is clicked')
@@ -17,9 +25,7 @@ const Facebook = () => {
     const setFbContent = (bool) => {
         if (bool === true) {
             fbContent = (
-                <div
-                    style={userStyle}
-                >
+                <div style={userStyle}>
                     <img src={picture} alt={name} />
                     <h2>Welcome {name}</h2>
                     Email: {email}
