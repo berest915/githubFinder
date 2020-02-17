@@ -5,13 +5,16 @@ import Spinner from '../layout/Spinner'
 
 const About = () => {
   const { users, fetchUsers, loading } = useContext(GithubContext)
-
+  
+ 
   useEffect(() => {
     fetchUsers()
+    console.log('useEffect called')
     // eslint-disable-next-line
   }, [])
-
+ 
   if (loading) return <Spinner />
+
   return (
     //! specify a var_to_change to trigger useEffect (act as dep)
     <Fragment>
@@ -20,10 +23,13 @@ const About = () => {
       <p>version 1.0.0</p>
       <br />
       <h2>A sample to test the response from github-api </h2>
-
+     
       {users.map((user) => (
-        <AboutUserItem key={user.id} passUser={user} />
+        <AboutUserItem key={user.id} user={user} 
+          // achieve={achieve}
+        />
       ))}
+ 
     </Fragment>
   )
 }

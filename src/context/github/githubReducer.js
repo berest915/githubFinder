@@ -16,7 +16,8 @@ export default (state, action) => {
       return{
         ...state,
         user: action.payload,
-        loading: false
+        loading: false,
+        
       }
     case FETCH_USERS:
       return {

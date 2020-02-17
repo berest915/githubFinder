@@ -31,6 +31,7 @@ const GithubState = (props) => {
     user: {},
     repos: [],
     loading: false,
+    loop: 0,
   }
   //! init Reducer
   const [state, dispatch] = useReducer(GithubReducer, initialState)
@@ -93,15 +94,17 @@ const GithubState = (props) => {
   const fetchUsers = async () => {
     setLoading()
 
-    const res = await fetch(`https://api.github.com/users?since=0&per_page=5&
+    const res = await axios.get(`https://api.github.com/users?since=0&per_page=5&
     client_id=${githubClientID}&
     client_secret=${githubClientSecret}`)
-    const users = await res.json()
- 
+    // const users = await res.json()
+    console.log('fetched')
+    console.log(res.data)
+
+
     dispatch({
       type: FETCH_USERS,
-      payload: users
-      // payload: res.data
+      payload: res.data
     })
   }
    // TEST
@@ -128,6 +131,7 @@ const GithubState = (props) => {
         user: state.user,
         repos: state.repos,
         loading: state.loading,
+     
         //! fn-to-alter-states
         searchUsers,
         getUser,

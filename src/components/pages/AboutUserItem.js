@@ -1,17 +1,10 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, Fragment } from 'react'
+import AboutUserItemInOne from './AboutUserItemInOne'
 import Spinner from '../layout/Spinner'
 import GithubContext from '../../context/github/githubContext'
 
-const About_UserItem = (props) => {
-  const { getSinceUser, user} = useContext(GithubContext)
-  const { passUser } = props
-  console.log(passUser.login)
-  // const { followers } = user.
-
-  // useEffect(() => {
-  //   getSinceUser(passUser.login)
-  //   // eslint-disable-next-line
-  // }, [])
+const AboutUserItem = (props) => {
+  const { user } = props
 
   return (
     <div className="card" style={gridStyle}>
@@ -31,16 +24,7 @@ const About_UserItem = (props) => {
           {user.login}
         </a>
       </div>
-      <div className="card text-center">
-        <div className="badge badge-primary">Followers : {user.followers}</div>
-        <div className="badge badge-success">Followings : {user.following}</div>
-        <div className="badge badge-danger">
-          Public-Repos : {user.public_repos}
-        </div>
-        <div className="badge badge-dark">
-          Public-Gists : {user.public_gists}
-        </div>
-      </div>
+      {/* <AboutUserItemInOne key={user.id} user={user} /> */}
     </div>
   )
 }
@@ -49,4 +33,4 @@ const gridStyle = {
   width: '100%',
   gridTemplateColumns: ' 1fr 6fr'
 }
-export default About_UserItem
+export default AboutUserItem
