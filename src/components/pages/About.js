@@ -24,6 +24,8 @@ const About = () => {
       <p>hey this is to search for github users</p>
       <p>version 1.0.0</p>
       <br />
+      <br/>
+      <h1>Failed Attempt, planned to exclude it before building>deploying</h1>
       <h2>A sample to test the response from github-api </h2>
 
       
