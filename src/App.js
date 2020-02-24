@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-//! Components
+//!  Components
 import Navbar from './components/layout/Navbar'
 import User from './components/users/User'
 import Alert from './components/layout/Alert'
