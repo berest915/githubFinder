@@ -1,3 +1,4 @@
+import './App.css'
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
@@ -14,7 +15,7 @@ import GithubState from './context/github/GIthubState'
 import AlertState from './context/alert/AlertState'
 import NavState from './context/_nav/NavState'
 import FbState from './components/facebook/FbState'
-import './App.css'
+
 
 const App = () => {
   return (
