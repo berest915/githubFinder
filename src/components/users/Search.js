@@ -8,7 +8,6 @@ const Search = () => {
     const { searchUsers, clearUsers, users } = githubContext
     const { setAlert } = alertContext
 
-    //! initial local-state & willChange due to input-evt
     const [title, setTitle] = useState('')
 
     const onChange = (e) => {

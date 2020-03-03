@@ -11,9 +11,7 @@ const Navbar = () => {
     const clickedHome = () => {
         setNavTitle('Github Finder')
     }
-    const clickedFb = () => {
-        setNavTitle('Facebook Login')
-    }
+    
     return (
         <nav className="navbar bg-primary">
             <Link to="/">
@@ -26,11 +24,6 @@ const Navbar = () => {
                 <li>
                     <Link to="/" onClick={clickedHome}>
                         Homepage
-                    </Link>{' '}
-                </li>
-                <li>
-                    <Link to="/fb-login" onClick={clickedFb}>
-                        Login Fb
                     </Link>{' '}
                 </li>
                 <li>

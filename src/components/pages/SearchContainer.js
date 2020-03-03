@@ -3,11 +3,10 @@ import Search from '../users/Search'
 import Users from '../users/Users'
 
 export default () => {
-    return (
-        <Fragment>
-            <Search />
-            <Users />
-            
-        </Fragment>
-    )
+	return (
+		<Fragment>
+			<Search />
+			<Users />
+		</Fragment>
+	)
 }

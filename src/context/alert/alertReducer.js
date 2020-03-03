@@ -9,7 +9,5 @@ export default (state, action) => {
             return null
         default:
             throw Error(`Unhandled Action: ${action.type}`)
-        // default:
-            // return state
     }
 }

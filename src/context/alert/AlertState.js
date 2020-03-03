@@ -5,7 +5,6 @@ import { SET_ALERT, REMOVE_ALERT } from '../types'
 
 const AlertState = (props) => {
     const initialState = null
-    //! init where-to-dispatch to x_Reducer whenever dispatch() is called  # while initialState passed as first argument ?
     const [state, dispatch] = useReducer(AlertReducer, initialState)
 
     // set & remove alert
