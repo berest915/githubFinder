@@ -14,7 +14,7 @@ const Navbar = () => {
     
     return (
         <nav className="navbar bg-primary">
-            <Link to="/">
+            <Link to="/" onClick={clickedHome}>
                 <h1>
                     <i style={{ marginRight: '1rem' }} className={icon}></i>
                     {title}
