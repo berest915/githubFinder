@@ -14,12 +14,12 @@ const Navbar = () => {
     
     return (
         <nav className="navbar bg-primary">
-            <Link to="/" onClick={clickedHome}>
                 <h1>
+            <Link to="/" onClick={clickedHome}>
                     <i style={{ marginRight: '1rem' }} className={icon}></i>
+            </Link>
                     {title}
                 </h1>
-            </Link>
             <ul>
                 <li>
                     <Link to="/" onClick={clickedHome}>
